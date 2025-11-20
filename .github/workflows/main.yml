@@ -19,7 +19,7 @@ jobs:
         run: composer update --no-interaction --prefer-lowest
 
       - name: Run static analysis
-        run: vendor/bin/phpstan analyse
+        run: vendor/bin/phpstan analyse --no-progress --memory-limit=-1
 
   php83:
     name: "php 8.3"
@@ -39,7 +39,7 @@ jobs:
         run: tools/php-cs-fixer fix --dry-run --no-interaction
 
       - name: Run static analysis
-        run: vendor/bin/phpstan analyse
+        run: vendor/bin/phpstan analyse --no-progress --memory-limit=-1
 
   php82:
     name: "php 8.2"
@@ -53,4 +53,4 @@ jobs:
         run: composer update --no-interaction --prefer-lowest
 
       - name: Run static analysis
-        run: vendor/bin/phpstan analyse
+        run: vendor/bin/phpstan analyse --no-progress --memory-limit=-1
